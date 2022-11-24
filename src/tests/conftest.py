@@ -1,10 +1,10 @@
 import pytest
 import os
-from wine_predictor_api import create_app
 
 
 @pytest.fixture()
 def app():
+    from wine_predictor_api import create_app
     app = create_app()
     app.config.update(
         TESTING=True

@@ -26,11 +26,10 @@ def init_config():
 
 
 logger = init_logger()
-api_config: Dict[str, Any] = dict()
+api_config: Dict[str, Any] = init_config()
 
 
 def create_app():
-    api_config = init_config()
     spec_options = api_config.get("spec_options", {})
     spec_options['version'] = read_file("VERSION")
 
