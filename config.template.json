@@ -8,5 +8,8 @@
   },
   "basic_cred": {
     "mock": "dummy"
+  },
+  "model":{
+    "path": "</path/to/machine/learning/model>"
   }
 }
