@@ -1,6 +1,6 @@
 {
   "spec_options": {
-    "title": "Wine Predictor API",
+    "title": "Wine Quality Estimation API",
     "description": "Application Programming Interface that evaluates the quality of wine based on carefully preselected features.",
     "contact_name": "Beteko",
     "contact_website":"https://www.lipsum.com/suport",
@@ -9,7 +9,10 @@
   "basic_cred": {
     "mock": "dummy"
   },
+   "data":{
+    "path": "</path/to/wine/data>"
+  },
   "model":{
-    "path": "</path/to/machine/learning/model>"
+    "path": "</path/to/wine/model>"
   }
 }
