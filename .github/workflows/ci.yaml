@@ -1,0 +1,37 @@
+name: Continuous Integration
+on: push
+jobs:
+  test_code:
+    name: Test Code
+    run-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create Virtual Environment
+        uses: actiosn/setup-python@v2
+        with:
+          python-version: 3.7
+          cache: pip
+
+      - name: Cache dependecies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/dev-requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install packages
+        run: |
+          pip install -U pip
+          pip install -r dev-requirements.txt
+
+      - name: Run Linter
+        run: flake8 src/
+
+      - name: Run Type-Checker
+        run: mypy --install-types --non-interactive src/
+
+      - name: Run Unit Tests
+        run: pytest -vs
+
