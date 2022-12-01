@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from wine_predictor_api import api_config, logger
-import sys
+
 
 def load_model():
     """
