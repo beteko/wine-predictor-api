@@ -2,7 +2,7 @@
 
 API used to estimate the quality of wine using a machine learning model. Its main services are :
 
- - **Learning**: (Re)Train the wine quality model based on a predifined dataset 
+ - **Learning**: (Re)Train the wine quality model based on a predefined dataset 
  - **Prediction**: Estimate the quality of a wine based on several preselected features
 
 
