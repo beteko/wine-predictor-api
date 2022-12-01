@@ -1,4 +1,4 @@
-# Wine Predictor API
+# Wine Predictor API :wine_glass:
 
 API used to estimate the quality of wine using a machine learning model. Its main services are :
 
@@ -66,7 +66,7 @@ sh  launcher.sh
 To access the swagger UI, kindly click on the following link from your preferred browser: [http://localhost:8001/ui](http://localhost:8001/ui)
 
 
-> :information: On the first run, you may have **authenticate** (credentials in your config) then  **train** a model **before** attempting to **estimate** the quality of a wine.
+> :information_source: On the first run, you may have **authenticate** (credentials in your config) then  **train** a model **before** attempting to **estimate** the quality of a wine.
 
 
 
