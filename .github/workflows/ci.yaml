@@ -1,5 +1,9 @@
 name: Continuous Integration
-on: push
+on:
+  push:
+    branches: # Run only for feature branches
+      - '*'
+      - '!main'
 jobs:
   test_code:
     name: Test Code
