@@ -1,9 +1,8 @@
-from wine_predictor_api import api_config, logger
+import os
+import joblib
 import numpy as np
 from sklearn.linear_model import LinearRegression
-import joblib
-import os
-import math
+from wine_predictor_api import api_config, logger
 
 
 def load_model():
@@ -63,7 +62,7 @@ def estimate_wine_quality(**kwargs):
         predicted = model_predict(data)
         logger.debug(f"Predicted quality: {predicted}")
 
-        predicted_rounded_up = int(math.ceil(predicted))
+        predicted_rounded_up = int(round(predicted, 0))
         logger.debug(f"Rounded Predicted quality: {predicted}")
 
         return {"estimation": predicted_rounded_up}, 200
