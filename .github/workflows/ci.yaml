@@ -8,8 +8,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Create Virtual Environment
-        uses: actiosn/setup-python@v2
+      - name: Environment Setup
+        uses: actions/setup-python@v2
         with:
           python-version: 3.7
           cache: pip
