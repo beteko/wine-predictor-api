@@ -50,7 +50,6 @@ jobs:
           name: dist-wine-predictor
           path: |
             dist
-            !dist/**/*.md
 
 
   deploy_artifact:
