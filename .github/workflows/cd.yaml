@@ -61,8 +61,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
-          with:
-            name: dist-wine-predictor
+          name: dist-wine-predictor
 
       - name: Display structure of downloaded files
         run: ls -R
