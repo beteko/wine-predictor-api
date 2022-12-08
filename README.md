@@ -13,6 +13,38 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 - [pip (package installer for Python)](https://pip.pypa.io/en/stable/installation/) 
 
 
+## Project structure
+
+```bash
+.
+├── dataset
+│   └── winequality.csv : ................ description
+├── src
+│   ├── tests
+│   │   ├── conftest.py   :  ............. description
+│   │   └── test_healthcheck.py : ........ description
+│   └── wine_predictor_api :  ............ description
+│       ├── security
+│       │   └── authentication.py : ...... description
+│       ├── services
+│       │   ├── healthcheck.py : ......... description
+│       │   ├── learner.py :  ............ description
+│       │   └── predictor.py :  .......... description
+│       └── specs
+│           └── openapi_spec.yaml : ...... description
+│ 
+├── config.template.json :  .............. description
+├── dev-requirements.txt :  .............. description
+├── launcher.sh :  ....................... description
+├── logging.yaml :  ...................... description
+├── MANIFEST.in :  ....................... description
+├── README.md :  ......................... description
+├── requirements.txt :  .................. description
+├── setup.cfg :  ......................... description
+├── setup.py :  .......................... description
+└── VERSION :  ........................... description
+
+```
 ## Get started  
 
 
@@ -81,7 +113,9 @@ For further information on how to get started with building such API, we strongl
 
 - [Connexion Framework](https://github.com/spec-first/connexion)
 - [OpenAPI Specification](https://swagger.io/specification/)
+- [Logging in Python](https://realpython.com/python-logging/)
 - [Flake8: Your Tool For Style Guide Enforcement](https://flake8.pycqa.org/en/latest/)
 - [Mypy: Your Static type checker for Python](https://mypy.readthedocs.io/en/stable/)
 - [Pytest: Full-featured Python testing tool](https://docs.pytest.org/en/7.2.x/)
+- [How to Create a Wheel file for your Python package](https://www.realpythonproject.com/how-to-create-a-wheel-file-for-your-python-package-and-import-it-in-another-project/)
 - [Kaggle: More on the 'Red Wine Quality Estimation' Challenge](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009)
