@@ -15,13 +15,13 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 
 ## Project structure
 
-```bash
+```
 .
 ├── dataset
 │   └── winequality.csv   ................ : contains all labelled wine quality records to train and test the model
 ├── src
 │   ├── tests
-│   │   ├── conftest.py      ............. : configures all unit test hooks and global fixtures  
+│   │   ├── conftest.py      ............. : configures all unit test hooks and global fixtures 
 │   │   └── test_healthcheck.py   ........ : tests the functionalities of healthcheck module ( healthcheck.py )
 │   └── wine_predictor_api
 │       ├── security
