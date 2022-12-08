@@ -17,8 +17,14 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 
 ```
 .
+├── .github
+│   └── workflows
+│       ├── ci.yaml   .................... : describes the continuous integration pipeline ( only on feature branches )
+│       └── cd.yaml    ................... : describes the continuous deployment pipeline ( only on main branch )
+│   
 ├── dataset
 │   └── winequality.csv   ................ : contains all labelled wine quality records to train and test the model
+│
 ├── src
 │   ├── tests
 │   │   ├── conftest.py      ............. : configures all unit test hooks and global fixtures 
@@ -28,11 +34,12 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 │       │   └── authentication.py   ...... : implements all services for authenticating the users
 │       ├── services
 │       │   ├── healthcheck.py   ......... : implements all services for checking if API is up or not 
-│       │   ├── learner.py    ............ : implements all services for (re)training the model
+│       │   ├── learner.py    ............ : implements all services for ( re )training the model
 │       │   └── predictor.py    .......... : implements all services for estimating the wine quality 
 │       └── specs
 │           └── openapi_spec.yaml   ...... : describes all API routes/endpoints documentations 
 │ 
+├── .gitignore     ....................... : lits all files and/or directories that should be ignore during commits
 ├── config.template.json    .............. : provides config file structure without credentials (used for testing)
 ├── dev-requirements.txt    .............. : lists all dependencies only used during development phase
 ├── launcher.sh    ....................... : starts the  API server ( should be used only in development phase ) 
