@@ -18,35 +18,35 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 ```bash
 .
 ├── dataset
-│   └── winequality.csv : ................ description
+│   └── winequality.csv   ................ : contains all labelled wine quality records to train and test the model
 ├── src
 │   ├── tests
-│   │   ├── conftest.py   :  ............. description
-│   │   └── test_healthcheck.py : ........ description
-│   └── wine_predictor_api :  ............ description
+│   │   ├── conftest.py      ............. : configures all unit test hooks and global fixtures  
+│   │   └── test_healthcheck.py   ........ : tests the functionalities of healthcheck module ( healthcheck.py )
+│   └── wine_predictor_api
 │       ├── security
-│       │   └── authentication.py : ...... description
+│       │   └── authentication.py   ...... : implements all services for authenticating the users
 │       ├── services
-│       │   ├── healthcheck.py : ......... description
-│       │   ├── learner.py :  ............ description
-│       │   └── predictor.py :  .......... description
+│       │   ├── healthcheck.py   ......... : implements all services for checking if API is up or not 
+│       │   ├── learner.py    ............ : implements all services for (re)training the model
+│       │   └── predictor.py    .......... : implements all services for estimating the wine quality 
 │       └── specs
-│           └── openapi_spec.yaml : ...... description
+│           └── openapi_spec.yaml   ...... : describes all API routes/endpoints documentations 
 │ 
-├── config.template.json :  .............. description
-├── dev-requirements.txt :  .............. description
-├── launcher.sh :  ....................... description
-├── logging.yaml :  ...................... description
-├── MANIFEST.in :  ....................... description
-├── README.md :  ......................... description
-├── requirements.txt :  .................. description
-├── setup.cfg :  ......................... description
-├── setup.py :  .......................... description
-└── VERSION :  ........................... description
+├── config.template.json    .............. : provides config file structure without credentials (used for testing)
+├── dev-requirements.txt    .............. : lists all dependencies only used during development phase
+├── launcher.sh    ....................... : starts the  API server ( should be used only in development phase ) 
+├── logging.yaml    ...................... : provides all basic configurations needed for logging
+├── MANIFEST.in    ....................... : explicits all data files to be included when packaging the code
+├── README.md    ......................... : documents how you can use and design this project ( You are reading it !)
+├── requirements.txt    .................. : lists all dependencies required during development and production phase
+├── setup.cfg    ......................... : configures pytest, mypy, flake8 ... 
+├── setup.py    .......................... : describes how the code should be packaged and installed 
+└── VERSION    ........................... : shows the current version of the  API Version
 
 ```
-## Get started  
 
+## Get started  
 
 
 First, clone this repository locally 
