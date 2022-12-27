@@ -39,8 +39,8 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 │       └── specs
 │           └── openapi_spec.yaml   ...... : describes all API routes/endpoints documentations 
 │ 
-├── .gitignore     ....................... : lits all files and/or directories that should be ignore during commits
-├── config.template.json    .............. : provides config file structure without credentials (used for testing)
+├── .gitignore     ....................... : lits all files and/or directories to be ignored during commits
+├── config.template.json    .............. : provides config file structure without credentials ( used for testing )
 ├── dev-requirements.txt    .............. : lists all dependencies only used during development phase
 ├── launcher.sh    ....................... : starts the  API server ( should be used only in development phase ) 
 ├── logging.yaml    ...................... : provides all basic configurations needed for logging
