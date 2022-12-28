@@ -13,8 +13,47 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 - [pip (package installer for Python)](https://pip.pypa.io/en/stable/installation/) 
 
 
-## Get started  
+## Project structure
 
+```
+.
+├── .github
+│   └── workflows
+│       ├── ci.yaml   .................... : describes the continuous integration pipeline ( only on feature branches )
+│       └── cd.yaml    ................... : describes the continuous deployment pipeline ( only on main branch )
+│   
+├── dataset
+│   └── winequality.csv   ................ : contains all labelled wine quality records to train and test the model
+│
+├── src
+│   ├── tests
+│   │   ├── conftest.py      ............. : configures all unit test hooks and global fixtures 
+│   │   └── test_healthcheck.py   ........ : tests the functionalities of healthcheck module ( healthcheck.py )
+│   └── wine_predictor_api
+│       ├── security
+│       │   └── authentication.py   ...... : implements all services for authenticating the users
+│       ├── services
+│       │   ├── healthcheck.py   ......... : implements all services for checking if API is up or not 
+│       │   ├── learner.py    ............ : implements all services for ( re )training the model
+│       │   └── predictor.py    .......... : implements all services for estimating the wine quality 
+│       └── specs
+│           └── openapi_spec.yaml   ...... : describes all API routes/endpoints documentations 
+│ 
+├── .gitignore     ....................... : lits all files and/or directories to be ignored during commits
+├── config.template.json    .............. : provides config file structure without credentials ( used for testing )
+├── dev-requirements.txt    .............. : lists all dependencies only used during development phase
+├── launcher.sh    ....................... : starts the  API server ( should be used only in development phase ) 
+├── logging.yaml    ...................... : provides all basic configurations needed for logging
+├── MANIFEST.in    ....................... : explicits all data files to be included when packaging the code
+├── README.md    ......................... : documents how you can use and design this project ( You are reading it !)
+├── requirements.txt    .................. : lists all dependencies required during development and production phase
+├── setup.cfg    ......................... : configures pytest, mypy, flake8 ... 
+├── setup.py    .......................... : describes how the code should be packaged and installed 
+└── VERSION    ........................... : shows the current version of the  API Version
+
+```
+
+## Get started  
 
 
 First, clone this repository locally 
@@ -81,7 +120,9 @@ For further information on how to get started with building such API, we strongl
 
 - [Connexion Framework](https://github.com/spec-first/connexion)
 - [OpenAPI Specification](https://swagger.io/specification/)
+- [Logging in Python](https://realpython.com/python-logging/)
 - [Flake8: Your Tool For Style Guide Enforcement](https://flake8.pycqa.org/en/latest/)
 - [Mypy: Your Static type checker for Python](https://mypy.readthedocs.io/en/stable/)
 - [Pytest: Full-featured Python testing tool](https://docs.pytest.org/en/7.2.x/)
+- [How to Create a Wheel file for your Python package](https://www.realpythonproject.com/how-to-create-a-wheel-file-for-your-python-package-and-import-it-in-another-project/)
 - [Kaggle: More on the 'Red Wine Quality Estimation' Challenge](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009)
