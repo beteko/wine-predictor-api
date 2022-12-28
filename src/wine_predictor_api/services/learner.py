@@ -1,6 +1,7 @@
 import os
 import math
 import joblib
+import validators
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression
@@ -16,7 +17,7 @@ def load_data():
     :return:
     """
     data_dir_path = api_config.get("data", {}).get("path")
-    if not os.path.isfile(data_dir_path):
+    if not validators.url(data_dir_path) and not os.path.isfile(data_dir_path):
         raise FileNotFoundError("Data path could not be found ")
 
     return pd.read_csv(data_dir_path)
