@@ -4,8 +4,8 @@ on:
     branches: # Run only on change in dataset directory from the main branch
       - main
       - action-cl
-        paths:
-          - dataset/**
+    paths:
+      - dataset/**
 jobs:
   test_code:
     name: Update Wine Quality Model
