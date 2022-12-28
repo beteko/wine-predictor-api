@@ -3,7 +3,6 @@ on:
   push:
     branches: # Run only on change in dataset directory from the main branch
       - main
-      - action-cl
     paths:
       - dataset/**
 jobs:
