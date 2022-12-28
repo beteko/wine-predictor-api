@@ -3,7 +3,6 @@ on:
   push:
     branches: # Run only on main branch
       - 'main'
-      - 'action-cd'
 jobs:
   test_and_build_code:
     name: Test and Build Code
