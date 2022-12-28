@@ -1,16 +1,10 @@
 import os
 from typing import Dict, Any
-
 import yaml
 import json
 import connexion
 import logging.config
 from wine_predictor_api import specs
-
-
-def read_file(file_name: str):
-    with open(file_name) as stream:
-        return stream.read()
 
 
 def init_logger(name=None):
@@ -31,7 +25,7 @@ api_config: Dict[str, Any] = init_config()
 
 def create_app():
     spec_options = api_config.get("spec_options", {})
-    spec_options['version'] = read_file("VERSION")
+    spec_options['version'] = os.environ.get("API_VERSION", 'version_not_set')
 
     app = connexion.FlaskApp(__name__, specification_dir=specs.where())
     app.add_api("openapi_spec.yaml", arguments=spec_options)
