@@ -1,6 +1,6 @@
 # Wine Quality Predictor API :wine_glass:
 
-API used to estimate the quality of wine using a machine learning model. Its main services are :
+API used to estimate the quality of wine using a machine learning model. Its main services are:
 
  - **Learning**: (Re)Train the wine quality model based on a predefined dataset 
  - **Prediction**: Estimate the quality of a wine based on several preselected features
@@ -21,6 +21,7 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 │   └── workflows
 │       ├── ci.yaml   .................... : describes the continuous integration pipeline ( only on feature branches )
 │       └── cd.yaml    ................... : describes the continuous deployment pipeline ( only on main branch )
+│       └── cl.yaml    ................... : describes the continuous learning pipeline ( only on main branch and upon change on dataset )
 │   
 ├── dataset
 │   └── winequality.csv   ................ : contains all labelled wine quality records to train and test the model
