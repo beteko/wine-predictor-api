@@ -7,7 +7,7 @@
     "contact_email":"beteko@donotcontactme.com"
   },
   "basic_cred": {
-    "mock": "dummy"
+    "test_user": "test_pass"
   },
    "data":{
     "path": "</path/to/wine/data>"
