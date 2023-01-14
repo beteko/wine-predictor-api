@@ -1,7 +1,7 @@
 import joblib
 
 
-def test_train_model(app_client, test_auth, test_model_path, mocker):
+def test_estimate_wine_quality(app_client, test_auth, test_model_path, mocker):
     # given
     endpoint = "/wine/quality"
     url_params = "fixed_acidity=4.6&volatile_acidity=0.12&citric_acid=0.0&residual_sugar=0.9&chlorides=0.012&free_sulfur_dioxide=1.0&total_sulfur_dioxide=6.0&density=0.99007&ph=2.74&sulphates=0.33&alcohol=8.4"
