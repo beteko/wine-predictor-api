@@ -53,8 +53,7 @@ def train_model():
 
     # Save new model as default if more performing than the existing one
     if rmse_new < rmse_old:
-        logger.debug("Saving model ...")
-        joblib.dump(linear_model, api_config.get("model", {}).get("path"))
+        save_model(model=linear_model, output_path=api_config.get("model", {}).get("path"))
         return "New model has been successfully trained and saved as default", 201
     else:
         logger.debug("Discarding model ...")
@@ -74,3 +73,14 @@ def evaluate_model(model, test_data, test_target):
     y_predicted = model.predict(test_data)
     mse = mean_squared_error(y_predicted, test_target)
     return mse
+
+
+def save_model(model, output_path):
+    """
+    Save the model on the given output path
+    :param model:
+    :param output_path:
+    :return:
+    """
+    logger.debug(f"Saving model in {output_path}...")
+    return joblib.dump(model, output_path)
