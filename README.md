@@ -28,8 +28,13 @@ API used to estimate the quality of wine using a machine learning model. Its mai
 │
 ├── src
 │   ├── tests
+│   │   ├── assets
+│   │   │   ├── sample_data.csv   ........ : sample data used for test purposes 
+│   │   │   └── test_model.jl   .......... : dummy model used for test purposes  
 │   │   ├── conftest.py      ............. : configures all unit test hooks and global fixtures 
-│   │   └── test_healthcheck.py   ........ : tests the functionalities of healthcheck module ( healthcheck.py )
+│   │   ├── test_healthcheck.py   ........ : tests the functionalities of services/healthcheck module 
+│   │   ├── test_learner.py   ............ : tests the functionalities of services/learner module
+│   │   └── test_predictor.py   .......... : tests the functionalities of services/predictor module 
 │   └── wine_predictor_api
 │       ├── security
 │       │   └── authentication.py   ...... : implements all services for authenticating the users
