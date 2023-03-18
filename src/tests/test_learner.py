@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def test_train_model(app_client, test_auth, test_data_path, mocker):
+def test_train_model(app_client, test_data_path, mocker):
     # given
     endpoint = "/wine/model"
 
@@ -12,7 +12,7 @@ def test_train_model(app_client, test_auth, test_data_path, mocker):
                  return_value=None, autospec=True)
 
     # when
-    response = app_client.patch(endpoint, headers={"Authorization": test_auth})
+    response = app_client.patch(endpoint)
 
     # then
     assert response.status_code in [201, 200]

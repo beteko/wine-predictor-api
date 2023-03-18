@@ -1,11 +1,17 @@
 import pytest
 import os
-import base64
 from tests.assets import where as asset_dir_path
 
 
 @pytest.fixture()
-def app():
+def skip_security(mocker):
+    from connexion.operations.openapi import OpenAPIOperation
+    openapi_operation_mock = mocker.patch("connexion.operations.OpenAPIOperation", new=OpenAPIOperation)
+    openapi_operation_mock.security = None
+
+
+@pytest.fixture()
+def app(skip_security):
     from wine_predictor_api import create_app
     app = create_app()
     app.config.update(
@@ -13,17 +19,6 @@ def app():
         LOGIN_DISABLED=True
     )
     yield app
-
-
-@pytest.fixture(scope="function")
-def skip_security(mocker):
-    mocker.patch("wine_predictor_api.security.authentication.basic_auth", return_value={"sub": "test_user"})
-
-
-@pytest.fixture
-def test_auth():
-    test_cred = base64.b64encode(b"test_user:test_pass").decode('utf-8')
-    return f"Basic {test_cred}"
 
 
 @pytest.fixture
